@@ -65,7 +65,7 @@ public class Main {
     public static String removeTag(String s, String tag) {
         int tagloc = s.indexOf(tag);
         int tagloc2 = s.lastIndexOf(tag);
-        if (tagloc != -1 && tagloc2 != -1) {
+        if ((tagloc != -1 && tagloc2 != -1) && (tagloc != tagloc2)){
             s = s.substring(tagloc, tagloc2);
             s = s.replace("<", "");
             s = s.replace(">", "");
@@ -77,14 +77,19 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        System.out.println("Scroll");
         System.out.println(scroll("Hello World"));
 
+        System.out.println("\nconvertName");
         System.out.println(convertName(" Reubenstein, Lori Renee      "));
 
+        System.out.println("\nnegative");
         System.out.println(negative("0010111001"));
 
+        System.out.println("\nconvertDate");
         System.out.println("04/20/2014 becomes " + convertDate("04/20/2014"));
 
+        System.out.println("\nconvertDate2");
         System.out.println("04/20/2014 becomes " + convertDate2("04/20/2014"));
         System.out.println("4/20/2014 becomes " + convertDate2("4/20/2014"));
         System.out.println("04/2/2014 becomes " + convertDate2("04/2/2014"));
